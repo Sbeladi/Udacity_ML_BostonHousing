@@ -11960,7 +11960,7 @@ Standard deviation of prices: $165,171.13
 <p><strong>Answer: </strong></p>
 <ul>
 <li>'RM" is proportional to the price. The. More number of rooms means higher price for the house. House with 'RM' value of 6 will worth less than a. house with 'RM' value of 7.</li>
-<li>'LSTAT' has negative effect on house price. More 'LSTAT' results in lowe house price. A neighborhood that has 'LSTAT' value of 15 will have home prices worth more than a neighborood with 'LSTAT' value of 17.</li>
+<li>'LSTAT' has negative effect on house price. More 'LSTAT' results in lowe house price. A neighborhood that has 'LSTAT' value of 15 will have home prices worth more than a neighborood with 'LSTAT' value of 17. The reason is that a neighborhood with 'LSTAT' of 17 has 2% more lower class homeowners in the area and the neighborhood will have lower house prices when the percentage of lower income homeoweners are higher.</li>
 <li>'PTRATIO' also has negative effect on house price. A neighborhood that has an 'PTRATIO' value of 10 have home prices be worth more than a neighborhood that has an 'PTRATIO' value of 15.</li>
 </ul>
 
@@ -12190,8 +12190,8 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>
-If a part of data is not set aside for testing then the model will use all the data for training. Therefore, one the model is done then there is no new data to test the performance of the model. It is worth mentioning that the algorithm can never be tested using the data that has already been used for testing. And if the model is not tested and if the performance is not evaluated then the model cannot be used for real world applications.</p>
+<p><strong>Answer: </strong></p>
+<p>If a part of data is not set aside for testing then the model will use all the data for training. Therefore, one the model is done then there is no new data to test the performance of the model. It is worth mentioning that the algorithm can never be tested using the data that has already been used for training. And if the model is not tested and if the performance is not evaluated then the model cannot be used for real world applications. It is worth mentioning that even a high score with training data does not mean that algorithm will be performing well on new data. The reason is that the model may be overfitted to the traning data and in this case it will perform poorly on any set of new data. So we need to keep a part of data apart (test data set) and evaluate the algorithm on test data to make sure our algorithm is not overfitted to traning data.</p>
 
 </div>
 </div>
@@ -13850,10 +13850,7 @@ I will choose max_depth = 4 for this model. As stated in the course videos, the 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<ul>
-<li>In the k-fold cross-validation technique, the model will be using all the data points for training while it always has some unused points for testing. In this technique, first we determine the value of k. Assuming k=3, model fitting is done three times. The data is devided to 3 equal sections. In each iteration, 1/3 of data is set aside and used for testing. In the next iteration, the other 1/3 of data is used for testing. So the data points that were not used for training before, will be used for training in the next iteartion. So although training and testing data are seperate in each iteration, the algorithm gets to use all the data at the end. </li>
-<li>This technique provides more training points for grid search to tune the parameters which is benefitial specially when data sets are small. One more benefit is that the parameter tuning will be independent of how the data was split into test and traning points and the results will be averaged at the end.</li>
-</ul>
+<p>In k-fold cross-validation technique our dataset is devided into k bins. The algorithm is trained k times and each time one of the bins is considered as the testing dataset. This is specially important during grid-search technique and helps us acheive the best parameters and our algorithm is not overfitted. Overfitting is particularly probable when we use grid search on one set of traning and testing split.</p>
 
 </div>
 </div>
@@ -13993,7 +13990,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong> Hint: </strong> The answer comes from the output of the code snipped above.</p>
 <p><strong>Answer: </strong>
-The optimal max_depth is 4.</p>
+The optimal max_depth is 4 which is the same as my answer is Question6.</p>
 
 </div>
 </div>
